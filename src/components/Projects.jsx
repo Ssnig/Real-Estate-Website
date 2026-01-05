@@ -10,16 +10,17 @@ const Projects = () => {
   }
   const prevProject = () => {
     setCurrentIndex((prevIndex) => prevIndex === 0 ? projectsData.length - 1 : prevIndex - 1);
-    
+
   }
 
   useEffect(() => {
-    const updateCardsToShow = () =>{
-      if(window.innerWidth >= 1024){
+    const updateCardsToShow = () => {
+      if (window.innerWidth >= 1024) {
         setCardsToShow(projectsData.length);
-    }else{
-      setCardsToShow(1);
-    };}
+      } else {
+        setCardsToShow(1);
+      };
+    }
     updateCardsToShow();
     window.addEventListener('resize', updateCardsToShow);
     return () => window.removeEventListener('resize', updateCardsToShow);
@@ -54,7 +55,7 @@ const Projects = () => {
                     {project.title}
                   </h2>
                   <p className='text-gray-500 text-sm'>
-                    {project.price} <span>|</span> {project.location}
+                    {project.price} <span className='px-1'>|</span> {project.location}
                   </p>
 
                 </div>
