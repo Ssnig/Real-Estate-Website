@@ -14,6 +14,17 @@ const Projects = () => {
   }
 
   useEffect(() => {
+    const updateCardsToShow = () =>{
+      if(window.innerWidth >= 1024){
+        setCardsToShow(projectsData.length);
+    }else{
+      setCardsToShow(1);
+    };}
+    updateCardsToShow();
+    window.addEventListener('resize', updateCardsToShow);
+    return () => window.removeEventListener('resize', updateCardsToShow);
+
+  }, []);
 
   return (
     <div className='container mx-auto py-4 pt-20 px-6 md:px-20 lg:px-32 my-20 w-full overflow-hidden ' id='Projects'>
