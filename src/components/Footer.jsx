@@ -31,7 +31,8 @@ const Footer = () => {
 
                 </div>
             </div>
-            <div>
+            <div className='border-t py-4 mt-10 border-gray-700 text-center text-gray-500'>
+                Copyright © 2026 Kyaw San Htun . All rights reserved.
 
             </div>
         </div>
